@@ -1,26 +1,32 @@
-var mongoose = require('mongoose')
+var mongoose = require("mongoose");
 
-var ScoreSchema = new mongoose.Schema({
-    score:{
-        type: Number,
-        required:true
-    }
-},{timestamps:true} )
-
-var UserSchema = new mongoose.Schema({
-    deviceId:{
-        type:String,
-        required:true
+var ScoreSchema = new mongoose.Schema(
+  {
+    score: {
+      type: Number,
+      required: true,
     },
-    username:{
-        type:String,
-        required:true,
-        maxlength:32
+  },
+  { timestamps: true }
+);
+const Score = mongoose.model("Score", ScoreSchema);
+
+var UserSchema = new mongoose.Schema(
+  {
+    deviceId: {
+      type: String,
+      required: true,
     },
-    statistics:[ScoreSchema]
+    username: {
+      type: String,
+      required: true,
+      maxlength: 32,
+    },
+    statistics: [ScoreSchema],
+  },
+  { timestamps: true }
+);
 
-},{ timestamps:true})
+const User = mongoose.model("User", UserSchema);
 
-const User = mongoose.model('User', UserSchema)
-
-module.exports = {User}
+module.exports = { User, Score };
