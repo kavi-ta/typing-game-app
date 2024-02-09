@@ -1,11 +1,47 @@
-exports.distribution = (intialDistribution, finalDistribution, currentLevel, totalLevels)=>{
-    return intialDistribution + (finalDistribution-initialDistribution)* (currentLevel/totalLevels)
-}
+const GetDistribution = (
+  initialDistribution,
+  finalDistribution,
+  currentLevel,
+  totalLevels
+) => {
+  return (
+    initialDistribution +
+    (finalDistribution - initialDistribution) * (currentLevel / totalLevels)
+  );
+};
 
-exports.time = (intialTime, currentLevel)=>{
-    return intialTime + 10*(currentLevel/5)
-}
+exports.GetLevelWordDistribution = (
+  initialWordsDistribution,
+  finalWordsDistribution,
+  currentLevel,
+  totalLevels
+) => {
+  return {
+    easy: GetDistribution(
+      initialWordsDistribution.easy,
+      finalWordsDistribution.easy,
+      currentLevel,
+      totalLevels
+    ),
+    medium: GetDistribution(
+      initialWordsDistribution.medium,
+      finalWordsDistribution.medium,
+      currentLevel,
+      totalLevels
+    ),
+    hard: GetDistribution(
+      initialWordsDistribution.hard,
+      finalWordsDistribution.hard,
+      currentLevel,
+      totalLevels
+    ),
+  };
+};
 
-exports.wordCount = (intialWordCount, currentLevel)=>{
-    return intialWordCount+ currentLevel+ (currentLevel/10)
-}
+exports.GetLevelTime = (initialTime, currentLevel) => {
+  return initialTime + 10 * (currentLevel / 5);
+};
+
+exports.GetLevelWordCount = (initialWordCount, currentLevel) => {
+  return initialWordCount + currentLevel + currentLevel / 10;
+};
