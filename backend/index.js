@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 app.use("/user", userRouter);
-app.use("/word", wordRouter);
+app.use("/words", wordRouter);
 // Error handler middleware
 app.use(globalErrorHandlerMiddleware);
 // DB connection
