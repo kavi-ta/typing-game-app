@@ -1,5 +1,5 @@
 const easy = {
-  intialTime: 40,
+  initialTime: 40,
   initialWordCount: 10,
   initialWordsDistribution: {
     easy: 1,
@@ -14,7 +14,7 @@ const easy = {
 };
 
 const medium = {
-  intialTime: 30,
+  initialTime: 30,
   initialWordCount: 10,
   initialWordsDistribution: {
     easy: 0.5,
@@ -29,7 +29,7 @@ const medium = {
 };
 
 const hard = {
-  intialTime: 20,
+  initialTime: 20,
   initialWordCount: 10,
   initialWordsDistribution: {
     easy: 0.2,
@@ -43,11 +43,10 @@ const hard = {
   },
 };
 
-const totalLevels = 10;
+exports.totalLevels = 10;
 
 exports.settings = {
   easy,
   medium,
   hard,
-  totalLevels,
 };
